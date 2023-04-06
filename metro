@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Проба пера</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+
+        .wrapper{
+            font-size: 20px;
+            margin: 0 auto;
+            width: 1240px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .string1{
+            width: 28%;
+            border: 3px solid black;
+            padding: 5px;
+            text-align: center;
+            margin-bottom: 1px;
+        }
+        
+        .string2{
+            width: 40%;
+            border-top: 3px solid black;
+            border-bottom: 3px solid black;
+            padding: 5px;
+            text-align: center;
+            margin-bottom: 1px;
+        }
+        
+        .string3{
+            width: 28%;
+            border: 3px solid black;
+            padding: 5px;
+            text-align: center;
+            margin-bottom: 1px;
+        }
+        
+        .string4 p{
+            text-align: center;
+            font-size: 20px;
+        }
+        
+        .string4 ol{
+            text-align: center;
+            line-height: 24px;
+            list-style-type: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Формирование составов и информаторы (январь 2008 года)</h1>
+    <?php
+        $host = 'localhost';
+        $db_name = 'f0799572_metro';
+        $login = 'f0799572_metro';
+        $password = 'er2k1078tch26';
+    
+        $pdo = new PDO("mysql:host=$host;dbname=$db_name", $login, $password);
+
+        $query = 'SELECT line_name, depo, informator FROM second'; 
+        $result = $pdo->query($query);
+
+        echo '<div class="wrapper">';
+        while($metro = $result->fetch()){
+            echo '<div class="string1">';
+            echo "<p>$metro[line_name]</p>";
+            echo '</div>';
+
+            echo '<div class="string2">';
+            echo "<p>$metro[depo]</p>";
+            echo '</div>';
+
+            echo '<div class="string3">';
+            echo "<p>$metro[informator]</p>";
+            echo '</div>';
+        }
+        echo '</div>';
+    ?>
+    <div class="string4">
+    <p>Информация взята из открытых источников:</p>
+    <ol>
+        <li><a href="https://www.youtube.com/@alTerrAlexey">https://www.youtube.com/@alTerrAlexey</a></li>
+        <li><a href="https://www.youtube.com/@mtransportx">https://www.youtube.com/@mtransportx</a></li>
+        <li><a href="https://www.youtube.com/@wertyinfo">https://www.youtube.com/@wertyinfo</a></li>
+        <li><a href="http://vagon.metro.ru/0.htm">http://vagon.metro.ru/0.htm</a></li>
+    </ol>
+    </div>
+</body>
+</html>
