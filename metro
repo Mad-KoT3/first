@@ -74,10 +74,10 @@
         </select>
     </form><br><br>
     <?php
-        $host = 'localhost';
-        $db_name = 'f0799572_metro';
-        $login = 'f0799572_metro';
-        $password = 'er2k1078tch26';
+        $host = 'xxxxxxxxxxxx';
+        $db_name = 'xxxxxxxxxxx';
+        $login = 'xxxxxxxxxxxx';
+        $password = 'xxxxxxxxxxx';
     
         $pdo = new PDO("mysql:host=$host;dbname=$db_name", $login, $password);
 
