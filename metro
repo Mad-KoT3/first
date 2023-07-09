@@ -60,7 +60,7 @@
     </style>
 </head>
 <body>
-    <p>Проект оч. далёк до релизного состояния, тапками не кидаться. Создан с использованием HTML, CSS, JS, PHP, MySQL. </p>
+    <p>Проект оч. далёк до вменяемого состояния. Тапками не кидаться, сам знаю. Создан с использованием HTML, CSS, JS, PHP, MySQL. </p>
     <p>Исходный код стартовой страницы: <a  href="https://github.com/Mad-KoT3/first/blob/main/metro" target="_blank">https://github.com/Mad-KoT3/first/blob/main/metro</a></p>
     <h1>Московский метрополитен: формрование составов и информаторы по состоянию на октябрь, 2006.</h1><br><br>
     <form action="" method="GET">
