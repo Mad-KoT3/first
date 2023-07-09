@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>Мосметро: составы, информаторы</title>
     <meta charset="utf-8">
-    <title>Проба пера</title>
     <style>
         h1{
             text-align: center;
+        }
+        
+        form{
+            font-size: 18px;
+            margin: 0 auto;
+            width: 1240px;
         }
 
         .wrapper{
@@ -54,16 +60,26 @@
     </style>
 </head>
 <body>
-    <h1>Формирование составов и информаторы (январь 2008 года)</h1>
+    <h1>Московский метрополитен: формрование составов и информаторы по состоянию на октябрь, 2006.</h1><br><br>
+    <form action="" method="GET">
+        <label for="year">Выбрать год: </label>
+        <select onchange="window.location.href=this.options[this.selectedIndex].value">
+            <option VALUE="http://f0799572.xsph.ru/2002/index.php">2002</option>
+            <option VALUE="http://f0799572.xsph.ru/2004/index.php">2004</option>
+            <option VALUE="http://f0799572.xsph.ru/2005/index.php">2005</option>
+            <option selected VALUE="http://f0799572.xsph.ru">2006</option>
+            <option VALUE="http://f0799572.xsph.ru/2008/index.php">2008</option>
+        </select>
+    </form><br><br>
     <?php
         $host = 'localhost';
         $db_name = 'f0799572_metro';
-        $login = 'f0799572_metro';
-        $password = 'er2k1078tch26';
+        $login = 'ххх';
+        $password = 'мож. ещё код от карты ввести?))';
     
         $pdo = new PDO("mysql:host=$host;dbname=$db_name", $login, $password);
 
-        $query = 'SELECT line_name, depo, informator FROM second'; 
+        $query = 'SELECT line_name, depo, informator FROM six'; 
         $result = $pdo->query($query);
 
         echo '<div class="wrapper">';
@@ -85,11 +101,31 @@
     <div class="string4">
     <p>Информация взята из открытых источников:</p>
     <ol>
-        <li><a href="https://www.youtube.com/@alTerrAlexey">https://www.youtube.com/@alTerrAlexey</a></li>
-        <li><a href="https://www.youtube.com/@mtransportx">https://www.youtube.com/@mtransportx</a></li>
-        <li><a href="https://www.youtube.com/@wertyinfo">https://www.youtube.com/@wertyinfo</a></li>
-        <li><a href="http://vagon.metro.ru/0.htm">http://vagon.metro.ru/0.htm</a></li>
+        <li><a  href="https://www.youtube.com/@alTerrAlexey" target="_blank">https://www.youtube.com/@alTerrAlexey</a></li>
+        <li><a href="https://www.youtube.com/@mtransportx" target="_blank">https://www.youtube.com/@mtransportx</a></li>
+        <li><a href="https://www.youtube.com/@wertyinfo" target="_blank">https://www.youtube.com/@wertyinfo</a></li>
+        <li><a href="http://vagon.metro.ru/0.htm" target="_blank">http://vagon.metro.ru/0.htm</a></li>
+        <li><a href="http://trehgranka.metro.ru/directory.htm" target="_blank">http://trehgranka.metro.ru/directory.htm</a></li>
+        <li>И некоторый материал предоставил <a href="https://www.youtube.com/@retro7456" target="_blank">https://www.youtube.com/@retro7456</a></li>
     </ol>
+    <p>К архивам, где хранятся (если сохранились, конечно) записи информаторов, начиная с 1972 года, надо ещё пробиться.</p>
     </div>
+    <script>
+        let audioNL = document.querySelectorAll('audio');
+        let audio = Array.apply(null, audioNL);
+
+        audio.forEach(t => {
+            let index = audio.indexOf(t);
+
+            t.addEventListener('play', ()=> {
+                audio.forEach(subT => {
+                    subT !== audio[index] ?
+                    (subT.pause(), subT.currentTime = 0) :
+                    subT.play()
+                })
+            })
+        });
+        
+    </script>
 </body>
 </html>
