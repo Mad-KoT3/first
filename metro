@@ -76,8 +76,8 @@
     <?php
         $host = 'localhost';
         $db_name = 'f0799572_metro';
-        $login = 'ххх';
-        $password = 'мож. ещё код от карты ввести?))';
+        $login = 'f0799572_metro';
+        $password = 'er2k1078tch26';
     
         $pdo = new PDO("mysql:host=$host;dbname=$db_name", $login, $password);
 
@@ -127,7 +127,6 @@
                 })
             })
         });
-        
     </script>
 </body>
 </html>
